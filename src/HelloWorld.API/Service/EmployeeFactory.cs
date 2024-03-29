@@ -6,34 +6,18 @@ internal static class EmployeeFactory
 {
     internal static IEmployee GetEmployeeInstance(EmployeeType employeeType, int id, string name, decimal salary, int age)
     {
-        IEmployee? employee = null;
-
-        switch (employeeType)
+        IEmployee employee = employeeType switch
         {
-            case EmployeeType.Teacher:
-                employee = FactoryPattern<IEmployee, Teacher>.GetInstance();
-                break;
-            case EmployeeType.HeadOfDepartment:
-                employee = FactoryPattern<IEmployee, HeadOfDepartment>.GetInstance();
-                break;
-            case EmployeeType.DeputyHeadMaster:
-                employee = FactoryPattern<IEmployee, DeputyHeadMaster>.GetInstance();
-                break;
-            case EmployeeType.HeadMaster:
-                employee = FactoryPattern<IEmployee, HeadMaster>.GetInstance();
-                break;
-            default:
-                break;
-        }
-        if (employee != null)
-        {
-            employee.Id = id;
-            employee.Name = name;
-            employee.Age = age;
-            employee.Salary = salary;
-        }
-        else
-            throw new NullReferenceException();
+            EmployeeType.Teacher => FactoryPattern<IEmployee, Teacher>.GetInstance(),
+            EmployeeType.HeadOfDepartment => FactoryPattern<IEmployee, HeadOfDepartment>.GetInstance(),
+            EmployeeType.DeputyHeadMaster => FactoryPattern<IEmployee, DeputyHeadMaster>.GetInstance(),
+            EmployeeType.HeadMaster => FactoryPattern<IEmployee, HeadMaster>.GetInstance(),
+            _ => throw new NullReferenceException(),
+        };
+        employee.Id = id;
+        employee.Name = name;
+        employee.Age = age;
+        employee.Salary = salary;
 
         return employee;
     }
