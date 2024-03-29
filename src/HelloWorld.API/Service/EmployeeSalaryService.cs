@@ -2,7 +2,7 @@
 
 namespace HelloWorld.API.Service;
 
-public class EmployeeSalaryService : IEmployeeSalaryService
+public partial class EmployeeSalaryService : IEmployeeSalaryService
 {
     public decimal GetAnualTotalSalary()
     {
@@ -12,56 +12,22 @@ public class EmployeeSalaryService : IEmployeeSalaryService
     {
         List<IEmployee> result = [];
 
-        IEmployee teatecher1 = new Teacher()
-        {
-            Id = 1,
-            Age = 28,
-            Name = "Bob Fisher",
-            Salary = 40000
-        };
-
+        IEmployee teatecher1 = EmployeeFactory.GetEmployeeInstance(EmployeeType.Teacher, 1, "Bob Fisher", 40000, 28);
         result.Add(teatecher1);
 
-        IEmployee teatecher2 = new Teacher()
-        {
-            Id = 2,
-            Age = 32,
-            Name = "Thomas",
-            Salary = 40000
-        };
-
+        IEmployee teatecher2 = EmployeeFactory.GetEmployeeInstance(EmployeeType.Teacher, 2, "Thomas", 40000, 32);
         result.Add(teatecher2);
 
-        IEmployee headOfDepartment = new HeadOfDepartment()
-        {
-            Id = 3,
-            Age = 35,
-            Name = "Brenda",
-            Salary = 50000
-        };
-
+        IEmployee headOfDepartment = EmployeeFactory.GetEmployeeInstance(EmployeeType.HeadOfDepartment, 3, "Brenda", 50000, 35);
         result.Add(headOfDepartment);
 
-        IEmployee deputyHeadMaster = new DeputyHeadMaster()
-        {
-            Id = 1,
-            Age = 28,
-            Name = "Devlin",
-            Salary = 60000
-        };
-
+        IEmployee deputyHeadMaster = EmployeeFactory.GetEmployeeInstance(EmployeeType.DeputyHeadMaster, 4, "Devlin", 60000, 28);
         result.Add(deputyHeadMaster);
 
-        IEmployee headMaster = new HeadMaster()
-        {
-            Id = 1,
-            Age = 28,
-            Name = "Damien",
-            Salary = 80000
-        };
-
+        IEmployee headMaster = EmployeeFactory.GetEmployeeInstance(EmployeeType.HeadMaster, 5, "Damien", 80000, 28);
         result.Add(headMaster);
 
         return result;
     }
+
 }
