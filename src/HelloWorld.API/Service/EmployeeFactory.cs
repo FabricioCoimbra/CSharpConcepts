@@ -11,16 +11,16 @@ internal static class EmployeeFactory
         switch (employeeType)
         {
             case EmployeeType.Teacher:
-                employee = new Teacher();
+                employee = FactoryPattern<IEmployee, Teacher>.GetInstance();
                 break;
             case EmployeeType.HeadOfDepartment:
-                employee = new HeadOfDepartment();
+                employee = FactoryPattern<IEmployee, HeadOfDepartment>.GetInstance();
                 break;
             case EmployeeType.DeputyHeadMaster:
-                employee = new DeputyHeadMaster();
+                employee = FactoryPattern<IEmployee, DeputyHeadMaster>.GetInstance();
                 break;
             case EmployeeType.HeadMaster:
-                employee = new HeadMaster();
+                employee = FactoryPattern<IEmployee, HeadMaster>.GetInstance();
                 break;
             default:
                 break;
@@ -35,7 +35,6 @@ internal static class EmployeeFactory
         else
             throw new NullReferenceException();
 
-        ArgumentNullException.ThrowIfNull(employee);
         return employee;
     }
 }
