@@ -6,15 +6,7 @@ public class EmployeeSalaryService : IEmployeeSalaryService
 {
     public decimal GetAnualTotalSalary()
     {
-        var employees = Seed();
-
-        var total = 0m;
-        foreach (var employee in employees)
-        {
-            total += employee.Salary;
-        }
-
-        return total;
+        return Seed().Sum(e => e.Salary);
     }
     private List<IEmployee> Seed()
     {
