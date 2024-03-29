@@ -1,13 +1,8 @@
 ﻿namespace HelloWorld.API.Service;
-
-public partial class EmployeeSalaryService
+internal enum EmployeeType
 {
-    public enum EmployeeType
-    {
-        Teacher,
-        HeadOfDepartment,
-        DeputyHeadMaster,
-        HeadMaster
-    }
-
+    Teacher,
+    HeadOfDepartment,
+    DeputyHeadMaster,
+    HeadMaster
 }
