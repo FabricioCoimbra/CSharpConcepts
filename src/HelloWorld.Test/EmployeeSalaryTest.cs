@@ -1,4 +1,4 @@
-using HelloWorld.API.Service;
+using HelloWorld.API.Service.Employee;
 
 namespace HelloWorld.Test;
 
@@ -11,7 +11,7 @@ public class EmployeeSalaryTest
         IEmployeeSalaryService service = new EmployeeSalaryService();
         var expectedSalary = 279500.0m;
         //Act
-        var AnualSalary = service.GetAnualTotalSalary();
+        var AnualSalary = service.GetAnnualTotalSalary();
 
         //Assert
         Assert.Equal(expectedSalary, AnualSalary);

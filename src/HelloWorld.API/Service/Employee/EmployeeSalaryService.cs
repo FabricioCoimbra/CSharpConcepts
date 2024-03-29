@@ -1,13 +1,14 @@
-﻿using HelloWorld.API.Model;
+﻿using HelloWorld.API.Model.Employee;
 
-namespace HelloWorld.API.Service;
+namespace HelloWorld.API.Service.Employee;
 
+/// <inheritdoc />
 public partial class EmployeeSalaryService : IEmployeeSalaryService
 {
-    public decimal GetAnualTotalSalary()
-    {
-        return Seed().Sum(e => e.Salary);
-    }
+    private readonly List<IEmployee> employees = Seed();
+    /// <inheritdoc />
+    public decimal GetAnnualTotalSalary() =>
+        employees.Sum(e => e.Salary);
     private static List<IEmployee> Seed() =>
     [
         EmployeeFactory.GetEmployeeInstance(EmployeeType.Teacher, 1, "Bob Fisher", 40000, 28),

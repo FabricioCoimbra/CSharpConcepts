@@ -1,5 +1,5 @@
 ﻿using BenchmarkDotNet.Attributes;
-using HelloWorld.API.Service;
+using HelloWorld.API.Service.Employee;
 
 namespace HelloWorld.Benchmark;
 
@@ -11,6 +11,6 @@ public class BenchmarkEmployeeSalary
     [Benchmark]
     public void MeasureAnualTotalSalary()
     {
-        _employeeSalaryService.GetAnualTotalSalary();
+        _employeeSalaryService.GetAnnualTotalSalary();
     }
 }

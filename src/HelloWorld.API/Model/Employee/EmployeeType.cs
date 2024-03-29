@@ -1,4 +1,4 @@
-﻿namespace HelloWorld.API.Service;
+﻿namespace HelloWorld.API.Model.Employee;
 internal enum EmployeeType
 {
     Teacher,

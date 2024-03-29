@@ -1,6 +1,6 @@
-﻿using HelloWorld.API.Model;
+﻿using HelloWorld.API.Model.Employee;
 
-namespace HelloWorld.API.Service;
+namespace HelloWorld.API.Service.Employee;
 
 internal static class EmployeeFactory
 {

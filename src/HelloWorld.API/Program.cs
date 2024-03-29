@@ -1,4 +1,4 @@
-using HelloWorld.API.Service;
+using HelloWorld.API.Service.Employee;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,7 +20,7 @@ builder.Services.AddSwaggerGen(c =>
     {
         if (File.Exists(filePath))
             c.IncludeXmlComments(filePath);
-    }    
+    }
 });
 
 var app = builder.Build();
