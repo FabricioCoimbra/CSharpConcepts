@@ -4,6 +4,7 @@ using Microsoft.OpenApi.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped<IEmployeeSalaryService, EmployeeSalaryService>();
+builder.Services.AddSingleton<IEmployeeCrudService, EmployeeCrudService>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

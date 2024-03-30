@@ -3,13 +3,13 @@
 namespace HelloWorld.API.Service.Employee;
 
 /// <inheritdoc />
-public partial class EmployeeSalaryService : IEmployeeSalaryService
+public class EmployeeSalaryService : IEmployeeSalaryService
 {
     private readonly List<IEmployee> employees = Seed();
     /// <inheritdoc />
     public decimal GetAnnualTotalSalary() =>
         employees.Sum(e => e.Salary);
-    private static List<IEmployee> Seed() =>
+    internal static List<IEmployee> Seed() =>
     [
         EmployeeFactory.GetEmployeeInstance(EmployeeType.Teacher, 1, "Bob Fisher", 40000, 28),
         EmployeeFactory.GetEmployeeInstance(EmployeeType.Teacher, 2, "Thomas", 40000, 32),

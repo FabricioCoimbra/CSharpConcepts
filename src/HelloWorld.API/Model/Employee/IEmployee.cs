@@ -3,7 +3,7 @@
 /// <summary>
 /// Definition of base employee
 /// </summary>
-internal interface IEmployee
+public interface IEmployee
 {
     /// <summary>
     /// Unique code to identify this Employee
@@ -21,4 +21,12 @@ internal interface IEmployee
     /// Age of employee
     /// </summary>
     int Age { get; set; }
+    /// <summary>
+    /// Creation time
+    /// </summary>
+    DateTime CreatedAt { get; set; }
+    /// <summary>
+    /// Last updated time
+    /// </summary>
+    DateTime UpdatedAt { get; set; }
 }

@@ -18,6 +18,8 @@ internal static class EmployeeFactory
         employee.Name = name;
         employee.Age = age;
         employee.Salary = salary;
+        employee.CreatedAt = DateTimeProvider.GetUTCDateTime();
+        employee.UpdatedAt = DateTimeProvider.GetUTCDateTime();
 
         return employee;
     }
